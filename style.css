@@ -13,7 +13,6 @@ body {
 }
 main {
   width: 90%;
-  /* border: 1px solid; */
   height: 80%;
   margin: 0 auto;
 }
@@ -22,8 +21,7 @@ main {
 }
 .input-section {
   width: 100%;
-  /* border: 1px solid; */
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   display: flex;
 }
 #todo-input {
@@ -43,4 +41,57 @@ main {
   color: #ffff;
   background-color: #484848;
   font-size: 1.3rem;
+}
+
+.task {
+  border: 1px solid grey;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+span {
+  display: flex;
+  align-items: center;
+}
+.complete-checkbox {
+  margin-right: 10px;
+  accent-color: #504c47;
+  height: 20px;
+  width: 20px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+}
+.todo-list {
+  max-height: 70%;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+.todo-list::before {
+  content: '';
+  position: sticky;
+  top: 0;
+  height: 3ch;
+  display: block;
+  background: linear-gradient(to top, transparent, white);
+  pointer-events: none;
+  z-index: 1;
+}
+.todo-list::after {
+  content: '';
+  position: sticky;
+  bottom: 0;
+  height: 30px;
+  display: block;
+  background: linear-gradient(to bottom, transparent, white);
+  pointer-events: none;
+}
+.quote-section p {
+  margin-bottom: 10px;
 }
