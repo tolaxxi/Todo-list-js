@@ -15,60 +15,19 @@
     <title>Todo list</title>
   </head>
   <body>
-    <main>
+    <form id="todoForm">
       <h1 class="heading">Your To Do</h1>
       <section class="input-section">
         <input type="text" placeholder="Add new task" id="todo-input" />
+
         <button id="add-btn"><i class="fa-solid fa-plus"></i></button>
       </section>
-      <ul class="todo-list">
-        <label for="" class="task">
-          <span>
-            <input type="checkbox" class="complete-checkbox" />
-            hell
-          </span>
-          <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
-        </label>
-        <label for="" class="task">
-          <span>
-            <input type="checkbox" class="complete-checkbox" />
-            hell
-          </span>
-          <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
-        </label>
-        <label for="" class="task">
-          <span>
-            <input type="checkbox" class="complete-checkbox" />
-            hell
-          </span>
-          <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
-        </label>
-        <label for="" class="task">
-          <span>
-            <input type="checkbox" class="complete-checkbox" />
-            hell
-          </span>
-          <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
-        </label>
-        <label for="" class="task">
-          <span>
-            <input type="checkbox" class="complete-checkbox" />
-            hell
-          </span>
-          <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
-        </label>
-        <label for="" class="task">
-          <span>
-            <input type="checkbox" class="complete-checkbox" />
-            hell
-          </span>
-          <button class="delete-btn"><i class="fa-solid fa-x"></i></button>
-        </label>
-      </ul>
+      <ul class="todo-list" id="todo-list"></ul>
+
       <section class="quote-section">
         <p class="task-counter">Your remaining todo:3</p>
         <p class="quote" id="quote">Loading...</p>
       </section>
-    </main>
+    </form>
   </body>
 </html>
