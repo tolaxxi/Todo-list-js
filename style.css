@@ -44,7 +44,7 @@ main {
 }
 
 .task {
-  border: 1px solid grey;
+  border: 1px solid #757779;
   width: 98%;
   display: flex;
   align-items: center;
@@ -94,4 +94,12 @@ span {
 }
 .quote-section p {
   margin-bottom: 10px;
+  font-style: italic;
+}
+.task-counter {
+  font-weight: 600;
+  color: #4a4d4c;
+}
+.quote {
+  color: #b5b5b5;
 }
