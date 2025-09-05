@@ -18,7 +18,7 @@ body {
 }
 form {
   width: 90%;
-  height: 80%;
+  /* height: 80%; */
   margin: 0 auto;
 }
 .heading {
@@ -74,7 +74,7 @@ span {
   border: none;
 }
 .todo-list {
-  max-height: 70%;
+  /* max-height: 70%; */
   margin-bottom: 10px;
   overflow: auto;
 }
@@ -98,6 +98,9 @@ span {
   pointer-events: none;
 }
 
+.quote-section {
+  padding-bottom: 50px;
+}
 .quote-section p {
   margin-bottom: 10px;
   font-style: italic;

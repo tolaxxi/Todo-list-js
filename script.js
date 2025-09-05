@@ -9,7 +9,7 @@ const quote_API = 'https://api.realinspire.live/v1/quotes/random?maxLength=100';
 
 getQuote();
 
-const allTodos = [];
+let allTodos = [];
 
 todoForm.addEventListener('submit', (e) => {
   // prevents the form from reloading after submit
@@ -65,6 +65,11 @@ function createTodo(todo) {
       span.classList.remove('completed');
     }
   });
+  // delete task
+  delBtn.addEventListener('click', (taskId) => {
+    allTodos = allTodos.filter((task) => task.id !== taskId);
+    label.remove();
+  });
 
   span.append(checkbox, todo.task);
   label.append(span, delBtn);
@@ -82,6 +87,6 @@ async function getQuote() {
     const quote = await data.json();
     quoteDisplay.textContent = `"${quote[0].content}" - ${quote[0].author}`;
   } catch (err) {
-    quoteDisplay.textContent = `There seem to be an issue please try again`;
+    quoteDisplay.textContent = `There seems to be an issue please check your internet connection and try again`;
   }
 }
