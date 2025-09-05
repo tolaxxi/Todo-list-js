@@ -66,9 +66,10 @@ function createTodo(todo) {
     }
   });
   // delete task
-  delBtn.addEventListener('click', (taskId) => {
-    allTodos = allTodos.filter((task) => task.id !== taskId);
+  delBtn.addEventListener('click', () => {
+    allTodos = allTodos.filter((task) => task.id !== todo.id);
     label.remove();
+    console.log(allTodos);
   });
 
   span.append(checkbox, todo.task);
@@ -79,7 +80,7 @@ function createTodo(todo) {
   // add the label to the ul
   todoList.append(label);
 }
-
+console.log(allTodos);
 // fetch quote from api
 async function getQuote() {
   try {
@@ -87,6 +88,6 @@ async function getQuote() {
     const quote = await data.json();
     quoteDisplay.textContent = `"${quote[0].content}" - ${quote[0].author}`;
   } catch (err) {
-    quoteDisplay.textContent = `There seems to be an issue please check your internet connection and try again`;
+    quoteDisplay.textContent = `⚠️ Please check your internet connection and try again.`;
   }
 }
