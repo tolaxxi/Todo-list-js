@@ -65,7 +65,7 @@ function createTodo(todo) {
     // strikethrough the text when completed
     if (todo.completed) {
       span.classList.add('completed');
-      completedTodo += 1;
+      completedTodo++;
       remainingTask();
     } else {
       span.classList.remove('completed');
@@ -76,6 +76,10 @@ function createTodo(todo) {
     allTodos = allTodos.filter((task) => task.id !== todo.id);
     label.remove();
     console.log(allTodos);
+    if (completedTodo > 0) {
+      completedTodo--;
+    }
+    remainingTask();
   });
 
   span.append(checkbox, todo.task);
