@@ -2,6 +2,7 @@ const quoteDisplay = document.querySelector('#quote');
 const todoForm = document.querySelector('#todoForm');
 const todoInput = document.querySelector('#todo-input');
 const addBtn = document.querySelector('#add-btn');
+const taskCounter = document.querySelector('.task-counter');
 
 const todoList = document.querySelector('#todo-list');
 
@@ -10,11 +11,14 @@ const quote_API = 'https://api.realinspire.live/v1/quotes/random?maxLength=100';
 getQuote();
 
 let allTodos = [];
+let completedTodo = 0;
 
+taskCounter.textContent = 'You remaining todos: 0';
 todoForm.addEventListener('submit', (e) => {
   // prevents the form from reloading after submit
   e.preventDefault();
   addTodo();
+  remainingTask();
 });
 
 // add todo
@@ -61,6 +65,8 @@ function createTodo(todo) {
     // strikethrough the text when completed
     if (todo.completed) {
       span.classList.add('completed');
+      completedTodo += 1;
+      remainingTask();
     } else {
       span.classList.remove('completed');
     }
@@ -81,6 +87,14 @@ function createTodo(todo) {
   todoList.append(label);
 }
 console.log(allTodos);
+
+// calculate remaining task
+function remainingTask() {
+  let totalTodo = allTodos.length;
+  let remainingTodo = totalTodo - completedTodo;
+  taskCounter.textContent = `Your remaining todos : ${remainingTodo}`;
+}
+
 // fetch quote from api
 async function getQuote() {
   try {
